@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo Home</title>
     
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> 
+<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -43,8 +47,8 @@
       {% endif %}
 
 
-<div class="container my-3">
-<h2 class="text-center mt-1">Welcome to Todo List {{name}}</h2>
+<div class="container">
+<h2 class="text-center mt-2">Welcome to Todo List {{name}}</h2>
 <form method="post">
     {% csrf_token %}
     <div class="form-group">
