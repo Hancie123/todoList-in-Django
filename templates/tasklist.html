@@ -33,37 +33,31 @@
           </div>
         </div>
       </nav>
-
-{% if success %}
-
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Hello!</strong> The form is submitted successfully!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      {% endif %}
-
-
-<div class="container my-3">
-<h2 class="text-center mt-1">Welcome to Todo List {{name}}</h2>
-<form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-<label>Task Title</label>
-<input type="text" class="form-control" name='title' placeholder="Enter your title">
-
 <br>
-<label>Task Description</label>
-<textarea class="form-control" rows="7" name='desc' cols="7" placeholder="Enter your description"></textarea>
+<div class="container">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for data in task  %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{data.title}}</td>
+                <td>{{data.desc}}</td>
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+      </table>
 
-</div>
-<br>
-   <input type="submit" value="Submit" class="btn btn-primary">
-</form> 
-</div>
-    
 
-
-
+    </div>
 
 
 
